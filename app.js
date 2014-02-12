@@ -39,6 +39,13 @@ tilelive.load(argv.url, function(err, source) {
             var y = req.params[2];
 
             source.getTile(z, x, y, function(err, tile, headers) {
+                for (header in headers) {
+                    if (!headers.hasOwnProperty(header)) {
+                        //The current property is not a direct property of p
+                        continue;
+                    }
+                    res.setHeader(header, headers[header]);
+                }
                 res.send(tile);
             });
         });
