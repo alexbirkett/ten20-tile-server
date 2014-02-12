@@ -1,0 +1,9 @@
+node_modules/
+public/components
+public/build
+app/views/partials/build/
+.tmp/
+.DS_Store
+certs
+.idea
+*.pem
