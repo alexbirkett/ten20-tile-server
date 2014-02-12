@@ -5,7 +5,13 @@ var app = express();
 var tilelive = require('tilelive');
 require('tilelive-mapnik').registerProtocols(tilelive);
 
-tilelive.load('mapnik:///home/alex/Documents/mapbox-osm-bright-86bc63f/build/Ten20Test.xml', function(err, source) {
+var argv = require('optimist')
+    .usage('Usage: $0 -url [mapnik xml url]')
+    .alias('u', 'url')
+    .demand(['u'])
+    .argv;
+
+tilelive.load(argv.url, function(err, source) {
     if (err) {
         throw err;
     }

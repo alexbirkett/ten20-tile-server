@@ -9,6 +9,7 @@
     "express": "3.4.8",
     "jade": "*",
     "tilelive": "~4.3.3",
-    "tilelive-mapnik": "0.6.5"
+    "tilelive-mapnik": "0.6.5",
+    "optimist": "0.6.1"
   }
 }
