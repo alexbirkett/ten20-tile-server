@@ -31,13 +31,11 @@ tilelive.load(argv.url, function(err, source) {
     app.get('/', routes.index);
     app.get(/^\/v2\/tiles\/(\d+)\/(\d+)\/(\d+).png$/, function(req, res){
 
-        var x = req.params[0];
-        var y = req.params[1];
-        var z = req.params[2];
+        var z = req.params[0];
+        var x = req.params[1];
+        var y = req.params[2];
 
-        console.log("x " + x + " y " + y + " z " + z);
-
-        source.getTile(x, y, z, function(err, tile, headers) {
+        source.getTile(z, x, y, function(err, tile, headers) {
             res.send(tile);
         });
     });
