@@ -6,9 +6,11 @@ var tilelive = require('tilelive');
 require('tilelive-mapnik').registerProtocols(tilelive);
 
 var argv = require('optimist')
-    .usage('Usage: $0 -url [mapnik xml url]')
+    .usage('Usage: $0 --url [mapnik xml url] --port [port]')
     .alias('u', 'url')
+    .alias('p',  'port')
     .demand(['u'])
+    .default('p', process.env.PORT || 7777)
     .argv;
 
 tilelive.load(argv.url, function(err, source) {
@@ -18,7 +20,8 @@ tilelive.load(argv.url, function(err, source) {
         if (err) {
             throw err;
         }
-        app.set('port', process.env.PORT || 7777);
+        var port = parseInt(argv.port, 10);
+        app.set('port', port);
         app.use(express.logger('dev'));
         app.use(express.json());
         app.use(express.urlencoded());
@@ -47,5 +50,4 @@ tilelive.load(argv.url, function(err, source) {
         console.log(e);
         throw e;
     }
-
 });
