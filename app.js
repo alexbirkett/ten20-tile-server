@@ -4,6 +4,7 @@ var path = require('path');
 var app = express();
 var tilelive = require('tilelive');
 require('tilelive-mapnik').registerProtocols(tilelive);
+require('mbtiles').registerProtocols(tilelive);
 
 var argv = require('optimist')
     .usage('Usage: $0 --url [mapnik xml url] --port [port]')
