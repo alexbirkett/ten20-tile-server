@@ -1,6 +1,6 @@
 {
   "name": "ten20-tile-server",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "start": "node app.js"
   },
@@ -8,14 +8,16 @@
     "express": "3.4.8",
     "tilelive": "~4.3.3",
     "tilelive-mapnik": "0.6.5",
-    "mbtiles":"0.4.2",
+    "mbtiles": "0.4.2",
     "optimist": "0.6.1"
   },
-  "preferGlobal":true,
+  "preferGlobal": true,
   "repository": {
-      "type": "git",
-       "url": "https://github.com/alexbirkett/ten20tileServer"
-   },
-   "main": "app",
-   "bin" : { "ten20-tile-server" : "./app.js" }
+    "type": "git",
+    "url": "https://github.com/alexbirkett/ten20tileServer"
+  },
+  "main": "app",
+  "bin": {
+    "ten20-tile-server": "./app.js"
+  }
 }
