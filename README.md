@@ -13,10 +13,14 @@ Uses leaflet compabtilble {z}/{x}/{y} tile scheme
 By default:
 http://localhost:7777/v2/tiles/{z}/{x}/{y}.png
 
+## Installation
+```npm install -g ten20-tile-server```
+
+
 ## Usage Examples
 
 ### Mapnik
-```node app.js --url mapnik:///home/alex/Documents/mapbox-osm-bright-86bc63f/build/ten20.xml```
+```ten20-tile-server --url mapnik:///home/alex/Documents/mapbox-osm-bright-86bc63f/build/ten20.xml```
 
 ### mbtiles
-```node app.js --url mbtiles:///home/alex/Documents/MapBox/tiles/ten20.mbtiles```
+```ten20-tile-server --url mbtiles:///home/alex/Documents/MapBox/tiles/ten20.mbtiles```
