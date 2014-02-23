@@ -1,10 +1,9 @@
 ten20tileServer
 ===============
 
-Generates tiles on the fly from Mapnik XML
+Generates map tiles on the fly from Mapnik XML or serves tiles from an [mbtiles](https://www.mapbox.com/developers/mbtiles/) file.
 
-ten20tileServer generates map tiles on the fly from Mapnik XML. The server is a very simple wrapper around [tilelive-mapnik](https://github.com/mapbox/tilelive-mapnik)
-
+ten20tileServer generates map tiles on the fly from Mapnik XML or serves tiles from an mbtiles file. ten20tileServer is a simple [Express](http://expressjs.com/) based wrapper around [tilelive.js] (https://github.com/mapbox/tilelive.js) library.
 
 
 ## Tile scheme
@@ -13,3 +12,11 @@ Uses leaflet compabtilble {z}/{x}/{y} tile scheme
 ## Leaflet tile layer url
 By default:
 http://localhost:7777/v2/tiles/{z}/{x}/{y}.png
+
+## Usage Examples
+
+### Mapnik
+```node app.js --url mapnik:///home/alex/Documents/mapbox-osm-bright-86bc63f/build/ten20.xml```
+
+### mbtiles
+```node app.js --url mbtiles:///home/alex/Documents/MapBox/tiles/ten20.mbtiles```
