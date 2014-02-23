@@ -1,5 +1,5 @@
-ten20 Tile Server
-===============
+#ten20 Tile Server
+
 
 Generates map tiles on the fly from Mapnik XML or serves tiles from an [mbtiles](https://www.mapbox.com/developers/mbtiles/) file.
 
