@@ -12,5 +12,6 @@
     "tilelive-mapnik": "0.6.5",
     "mbtiles":"0.4.2",
     "optimist": "0.6.1"
-  }
+  },
+  "preferGlobal":true
 }
