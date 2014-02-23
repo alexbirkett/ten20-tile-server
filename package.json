@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "ten20-tile-server",
   "version": "0.0.1",
   "scripts": {
     "start": "node app.js"
