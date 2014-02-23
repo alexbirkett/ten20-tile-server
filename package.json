@@ -13,5 +13,9 @@
     "mbtiles":"0.4.2",
     "optimist": "0.6.1"
   },
-  "preferGlobal":true
+  "preferGlobal":true,
+  "repository": {
+      "type": "git",
+       "url": "https://github.com/alexbirkett/ten20tileServer"
+   }
 }
