@@ -2,9 +2,10 @@
 
 var express = require('express');
 var http = require('http');
-var path = require('path');
+var morgan  = require('morgan');
 var app = express();
 var tilelive = require('tilelive');
+
 
 var argv = require('optimist')
     .usage('Usage: $0 --url [mapnik xml url] --port [port] --module [tilelive-mapnik | mbtiles]')
@@ -27,14 +28,9 @@ try {
             }
             var port = parseInt(argv.port, 10);
             app.set('port', port);
-            app.use(express.logger('dev'));
-            app.use(express.json());
-            app.use(express.urlencoded());
-            app.use(express.methodOverride());
-            app.use(app.router);
 
             if ('development' == app.get('env')) {
-                app.use(express.errorHandler());
+                app.use(morgan());
             }
 
             app.get(/^\/v2\/tiles\/(\d+)\/(\d+)\/(\d+).png$/, function(req, res){
